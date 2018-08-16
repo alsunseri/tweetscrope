@@ -2,10 +2,10 @@ class Keyword < ApplicationRecord
 	has_many :tweets
 	def grab_twitts
 		client = Twitter::REST::Client.new do |config|
-			config.consumer_key        = "2lF2l4CsXujzeuWnJOLhCX04p"
-			config.consumer_secret     = "6ovgFnUnUenD2PajCwIm79tbGQMPn1K5Yc6KwSyIt5xGY3vGOm"
-			config.access_token        = "24200461-8gssFGrtAqRAxywYiEwfmz6yc0nih5ZavEwl4mgAS"
-			config.access_token_secret = "P5WccAWp21e6be2L3RtaeLYHeW5CBtCeFTV1LBKLoYDo7"
+			config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
+			config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
+			config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
+			config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
 		end
 
 		client.search(self.word,  :count => 100, :result_type =>  "recent").take(100).collect do |tweet|
