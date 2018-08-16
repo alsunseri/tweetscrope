@@ -10,6 +10,7 @@ class KeywordsController < ApplicationController
   # GET /keywords/1
   # GET /keywords/1.json
   def show
+    @twitts=@keyword.tweets.order("created_at DESC").page(params[:page]).per_page(100)
 	 # @keyword.grab_twitts
   end
 
@@ -18,7 +19,7 @@ class KeywordsController < ApplicationController
     @keyword = Keyword.new
   end
 
-  # GET /keywords/1/edit
+  ## GET /keywords/1/edit
   def edit
   end
 
