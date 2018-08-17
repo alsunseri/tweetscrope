@@ -19,6 +19,9 @@ gem 'xmlrpc'
 gem 'mini_magick'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+gem 'asset_sync'
+
+gem "fog-aws"
 
 ###############################
 # Use Puma as the app server
