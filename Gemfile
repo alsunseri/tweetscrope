@@ -12,6 +12,10 @@ gem 'pg'
 # twitter gem
 gem 'twitter',  '~> 5.5.1'
 gem 'will_paginate'
+gem 'carrierwave'
+gem 'fog', '~> 1.32.0'
+gem 'net-ssh'
+gem 'xmlrpc'
 
 ###############################
 # Use Puma as the app server
