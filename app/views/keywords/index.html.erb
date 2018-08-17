@@ -11,9 +11,19 @@
   </thead>
 
   <tbody>
+    <tr>
+      <td>Icon/Logo</td>
+      <td>Keyword</td>
+      <td># of Tweets</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
     <% @keywords.each do |keyword| %>
       <tr>
+        <td><%= image_tag(keyword.image.thumb.url) if keyword.image? %></td>
         <td><%= keyword.word %></td>
+        <td><%= keyword.tweets.count %></td>
         <td><%= link_to 'Show', keyword %></td>
         <td><%= link_to 'Edit', edit_keyword_path(keyword) %></td>
         <td><%= link_to 'Destroy', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>

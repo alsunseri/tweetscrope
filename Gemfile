@@ -16,6 +16,7 @@ gem 'carrierwave'
 gem 'fog', '~> 1.32.0'
 gem 'net-ssh'
 gem 'xmlrpc'
+gem 'mini_magick'
 
 ###############################
 # Use Puma as the app server
