@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h2>Listing keywords</h2>
+<% cache("keywords_home_table", :expires_in => 1.hour) do %>
 
 <%= link_to 'New Keyword', new_keyword_path, :class=>"btn btn-success", :style=>"float:right" %>
 
@@ -34,4 +35,5 @@
   </tbody>
 </table>
 
+<% end %>
 <br>

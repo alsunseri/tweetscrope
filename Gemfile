@@ -22,6 +22,8 @@ gem 'jquery-rails'
 gem 'asset_sync'
 
 gem "fog-aws"
+gem 'dalli'
+gem 'memcachier'
 
 ###############################
 # Use Puma as the app server
