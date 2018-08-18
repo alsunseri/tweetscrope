@@ -5,6 +5,8 @@
   <%= image_tag(@keyword.image.thumb.url) if @keyword.image? %>
   <%= @keyword.word %>
 </p>
+<% cache "keywords_show_id#{@keyword.id}_page#{params[:page]}", skip_digest: true, :expires_in=>5.minutes do %>
+
 <h2>Latest Twitts (<%=@keyword.tweets.count%>)</h2>
 <ul>
 	<%@twitts.each  do |twitt|%>
@@ -13,9 +15,11 @@
 		<li> <img src=<%=twitt.user_image_url%> width="30">  <%=twitt.user_screen_name%>: <%=twitt.text%></li>
 	<%end%>
 </ul>
+
 <div style="padding:20px; border: solid 1px #CCC;margin-bottom: 20px">
 <%=will_paginate @twitts%>
 </div>
 
+<% end %>
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
 <%= link_to 'Back', keywords_path %>

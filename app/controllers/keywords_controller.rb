@@ -31,6 +31,7 @@ class KeywordsController < ApplicationController
     respond_to do |format|
       if @keyword.save
 	      @keyword.grab_twitts
+        expire_fragment('keywords_home_table')
         format.html { redirect_to @keyword, notice: 'Keyword was successfully created.' }
         format.json { render :show, status: :created, location: @keyword }
       else

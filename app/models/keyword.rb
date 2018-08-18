@@ -29,7 +29,7 @@ class Keyword < ApplicationRecord
 		Keyword.all.each do |keyword|
 			keyword.grab_twitts
 		end
-		expire_fragment('keywords_home_table')
+		ActionController::Base.new.expire_fragment('keywords_home_table')
 	end
 
 end
